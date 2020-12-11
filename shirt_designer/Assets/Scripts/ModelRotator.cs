@@ -17,12 +17,12 @@ public class ModelRotator : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(pressLeft)) {
-            transform.Rotate(0.0f, 0.0f, 1.0f, Space.Self);
+            transform.Rotate(0.0f,1.0f ,0.0f , Space.Self);
         }
 
         if (Input.GetKey(pressRight))
         {
-            transform.Rotate(0.0f, 0.0f, -1.0f, Space.Self);
+            transform.Rotate(0.0f, -1.0f, 0.0f, Space.Self);
         }
 
     }
