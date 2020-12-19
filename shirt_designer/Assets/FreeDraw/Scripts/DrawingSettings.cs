@@ -10,6 +10,8 @@ namespace FreeDraw
     {
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
+        public FlexibleColorPicker fcp;
+
 
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
         public void SetMarkerColour(Color new_color)
@@ -36,27 +38,15 @@ namespace FreeDraw
 
 
         // Call these these to change the pen settings
+
         public void SetMarkerRed()
         {
-            Color c = Color.red;
+            Color c = fcp.color;
             c.a = Transparency;
             SetMarkerColour(c);
             Drawable.drawable.SetPenBrush();
         }
-        public void SetMarkerGreen()
-        {
-            Color c = Color.green;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerBlue()
-        {
-            Color c = Color.blue;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
+
         public void SetEraser()
         {
             SetMarkerColour(new Color(255f, 255f, 255f, 0f));
